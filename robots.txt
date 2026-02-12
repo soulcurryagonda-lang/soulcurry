@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://soulcurryagonda.com/sitemap.xml
+Sitemap: https://soulcurryagonda.in/sitemap.xml
