@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://soulcurrygoa.in/sitemap.xml
+Sitemap: https://www.soulcurrygoa.in/sitemap.xml

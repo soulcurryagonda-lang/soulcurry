@@ -236,7 +236,7 @@ ul {
     min-height: 600px;
     background-color: #333;
     /* Updated to use the new exterior night shot */
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('assets/exterior-night.png') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.8)), url('assets/exterior-night.webp') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -279,6 +279,14 @@ ul {
     margin-bottom: 2.5rem;
     font-weight: 300;
     color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-subtext {
+    font-size: 1.1rem !important;
+    max-width: 700px;
+    margin: -1.5rem auto 2.5rem !important;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .cta-group {

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>Menu — Soul Curry Agonda | Authentic Goan Seafood & Family Restaurant</title>
+  <meta name="description"
+    content="Explore our full menu of authentic Goan seafood, fresh daily catch, fish thali, starters, and bar drinks. Best rated food in Agonda, South Goa.">
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Lato:wght@300;400;700&display=swap">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* ===== MENU PAGE SPECIFIC STYLES ===== */
+    body {
+      background-color: #1a0a00;
+      color: #f5e6c8;
+    }
+
+    .menu-page-header {
+      padding: 120px 0 40px;
+      text-align: center;
+      background: linear-gradient(rgba(0,0,0,0.7), rgba(26,10,0,1)), url('assets/ambience-night.webp');
+      background-size: cover;
+      background-position: center;
+    }
+
+    #menu {
+      background-color: #1a0a00;
+      padding: 40px 0 80px;
+    }
+
+    #menu .section-title {
+      text-align: center;
+      color: #f5e6c8;
+      font-size: 2.8rem;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    #menu .section-subtitle {
+      text-align: center;
+      color: #c97d2e;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+      letter-spacing: 1px;
+    }
+
+    .menu-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 50px;
+      padding: 0 20px;
+      position: sticky;
+      top: 80px;
+      z-index: 100;
+      background: rgba(26, 10, 0, 0.9);
+      padding: 15px 0;
+      backdrop-filter: blur(5px);
+    }
+
+    .menu-tab {
+      background: transparent;
+      border: 1px solid #c97d2e;
+      color: #c97d2e;
+      padding: 10px 22px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+      font-family: 'Lato', sans-serif;
+      font-weight: 600;
+    }
+
+    .menu-tab:hover,
+    .menu-tab.active {
+      background: #c97d2e;
+      color: #1a0a00;
+    }
+
+    .menu-category {
+      display: none;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+      animation: fadeIn 0.4s ease-out;
+    }
+
+    .menu-category.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .menu-category h3 {
+      color: #c97d2e;
+      font-size: 0.85rem;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      border-bottom: 1px solid #3a1f00;
+      padding-bottom: 12px;
+      margin: 45px 0 25px;
+    }
+
+    .menu-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 40px;
+    }
+
+    .menu-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px dashed #2e1500;
+      gap: 15px;
+    }
+
+    .menu-item-name {
+      color: #f5e6c8;
+      font-size: 1.05rem;
+      line-height: 1.4;
+      flex: 1;
+      font-family: 'Playfair Display', serif;
+    }
+
+    .menu-item-name small {
+      display: block;
+      color: #8a6a44;
+      font-size: 0.85rem;
+      margin-top: 4px;
+      font-family: 'Lato', sans-serif;
+      font-style: italic;
+    }
+
+    .menu-item-price {
+      color: #c97d2e;
+      font-size: 1rem;
+      font-weight: 700;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .menu-note {
+      color: #8a6a44;
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 40px;
+      font-style: italic;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    @media (max-width: 768px) {
+      .menu-items {
+        grid-template-columns: 1fr;
+      }
+      .menu-tabs {
+        top: 70px;
+      }
+      #menu .section-title {
+        font-size: 2.2rem;
+      }
+    }
+
+    .back-home {
+        margin-top: 50px;
+        text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.webp" width="75" height="79" alt="Soul Curry Agonda logo" loading="eager">
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#about">Our Story</a></li>
+        <li><a href="#menu" class="active">Menu</a></li>
+        <li><a href="index.html#booking" class="btn-primary">Book a Table</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="menu-page-header">
+    <div class="container">
+        <h1 class="section-title">Our Full Menu</h1>
+        <p class="section-subtitle">Fresh · Authentic · Made with Love in Agonda</p>
+    </div>
+  </header>
+
+  <main>
+    <section id="menu" itemscope itemtype="https://schema.org/Menu">
+      <div class="container">
+        
+        <!-- Category Tabs -->
+        <div class="menu-tabs" role="tablist">
+          <button class="menu-tab active" onclick="showMenu(event, 'goan')" role="tab" aria-selected="true">🐟 Goan &amp; Seafood</button>
+          <button class="menu-tab" onclick="showMenu(event, 'starters')" role="tab">🍢 Starters</button>
+          <button class="menu-tab" onclick="showMenu(event, 'maincourse')" role="tab">🍛 Main Course</button>
+          <button class="menu-tab" onclick="showMenu(event, 'rice')" role="tab">🍚 Rice &amp; Bread</button>
+          <button class="menu-tab" onclick="showMenu(event, 'chinese')" role="tab">🍜 Chinese</button>
+          <button class="menu-tab" onclick="showMenu(event, 'pizza')" role="tab">🍕 Pizza &amp; Pasta</button>
+          <button class="menu-tab" onclick="showMenu(event, 'drinks')" role="tab">🍺 Bar</button>
+        </div>
+
+        <!-- ── GOAN & SEAFOOD ── -->
+        <div class="menu-category active" id="cat-goan">
+          <h3>Fish Thali</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Veg Thali</span><span class="menu-item-price">₹130</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mackerel Thali</span><span class="menu-item-price">₹140</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mackerel Racheado</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Lepo Thali</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Muddoshi Thali</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">King Fish Thali</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Modso Thali</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chonak Thali</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Bombil Thali</span><span class="menu-item-price">₹250</span></div>
+            <div class="menu-item"><span class="menu-item-name">Pomfret Thali</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Thali</span><span class="menu-item-price">₹250</span></div>
+          </div>
+
+          <h3>Fresh Seafood <small> — Rawa · Masala · Racheado · Tawa Fry · Butter Garlic · Golden Fry</small></h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Kingfish</span><span class="menu-item-price">Pls Ask</span></div>
+            <div class="menu-item"><span class="menu-item-name">White Snapper</span><span class="menu-item-price">Pls Ask</span></div>
+            <div class="menu-item"><span class="menu-item-name">Red Snapper</span><span class="menu-item-price">Pls Ask</span></div>
+            <div class="menu-item"><span class="menu-item-name">Lady Fish</span><span class="menu-item-price">Pls Ask</span></div>
+            <div class="menu-item"><span class="menu-item-name">Pomfret</span><span class="menu-item-price">Pls Ask</span></div>
+            <div class="menu-item"><span class="menu-item-name">Prawns</span><span class="menu-item-price">₹400</span></div>
+            <div class="menu-item"><span class="menu-item-name">Modso</span><span class="menu-item-price">Pls Ask</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mackeral</span><span class="menu-item-price">₹150</span></div>
+            <div class="menu-item"><span class="menu-item-name">Sardine</span><span class="menu-item-price">₹180</span></div>
+            <div class="menu-item"><span class="menu-item-name">Dodyaro</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Squids</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Crabs</span><span class="menu-item-price">Pls Ask</span></div>
+            <div class="menu-item"><span class="menu-item-name">Lepo</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Bombil <small>(Seasonal)</small></span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Tisreo</span><span class="menu-item-price">₹280</span></div>
+            <div class="menu-item"><span class="menu-item-name">Kalwa</span><span class="menu-item-price">₹250</span></div>
+            <div class="menu-item"><span class="menu-item-name">Shenaneo</span><span class="menu-item-price">Market Rate</span></div>
+          </div>
+
+          <h3>Curries</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Prawns Curry</span><span class="menu-item-price">₹290</span></div>
+            <div class="menu-item"><span class="menu-item-name">Kingfish Curry</span><span class="menu-item-price">₹290</span></div>
+            <div class="menu-item"><span class="menu-item-name">Ambotik <small>(Lepo / Mackeral)</small></span><span class="menu-item-price">Pls Ask</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mackeral Curry</span><span class="menu-item-price">₹180</span></div>
+          </div>
+
+          <h3>Salads &amp; Sides</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Green Salad</span><span class="menu-item-price">₹100</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Caesar Salad</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Veg Mix Salad</span><span class="menu-item-price">₹110</span></div>
+            <div class="menu-item"><span class="menu-item-name">Plain Curd</span><span class="menu-item-price">₹60</span></div>
+            <div class="menu-item"><span class="menu-item-name">Raita</span><span class="menu-item-price">₹80</span></div>
+          </div>
+
+          <h3>Egg</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Boiled Egg</span><span class="menu-item-price">₹40</span></div>
+            <div class="menu-item"><span class="menu-item-name">Masala Omelette</span><span class="menu-item-price">₹60</span></div>
+            <div class="menu-item"><span class="menu-item-name">Plain Omelette</span><span class="menu-item-price">₹60</span></div>
+            <div class="menu-item"><span class="menu-item-name">Egg Bhurji</span><span class="menu-item-price">₹120</span></div>
+            <div class="menu-item"><span class="menu-item-name">Cheese Omelette</span><span class="menu-item-price">₹160</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mushroom Omelette</span><span class="menu-item-price">₹150</span></div>
+            <div class="menu-item"><span class="menu-item-name">Masala Cheese Omelette</span><span class="menu-item-price">₹170</span></div>
+          </div>
+
+          <p class="menu-note">⚠️ Seafood availability depends on the daily catch from local Agonda fishermen. Please ask your server.</p>
+        </div>
+
+        <!-- ── STARTERS ── -->
+        <div class="menu-category" id="cat-starters">
+          <h3>Veg Starters</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Masala Papad</span><span class="menu-item-price">₹80</span></div>
+            <div class="menu-item"><span class="menu-item-name">Roasted Papad</span><span class="menu-item-price">₹40</span></div>
+            <div class="menu-item"><span class="menu-item-name">French Fries</span><span class="menu-item-price">₹120</span></div>
+            <div class="menu-item"><span class="menu-item-name">Honey Chilli Potato</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Paneer Chilly</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Gobi Manchurian</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Gobi Chilly</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Paneer 65</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Paneer Schezwan</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mushroom Chilly</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Garlic French Fries</span><span class="menu-item-price">₹150</span></div>
+            <div class="menu-item"><span class="menu-item-name">Onion Rings</span><span class="menu-item-price">₹120</span></div>
+            <div class="menu-item"><span class="menu-item-name">Paneer Pakora</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Paneer Cheese Ball</span><span class="menu-item-price">₹200</span></div>
+          </div>
+
+          <h3>Non-Veg Starters</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Chicken Lollipop</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Chilly <small>(Goan / Chinese)</small></span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Crispy</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken 65</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Manchurian</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Crunchy</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Pepper Fry</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Dry Fry</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Gizzard</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Schezwan</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Schezwan Lollipop</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Crispy Honey Mustard Chicken</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Dragon Chicken</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Crispy KFC Style</span><span class="menu-item-price">₹220</span></div>
+          </div>
+
+          <h3>Tandoor</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Paneer Tikka</span><span class="menu-item-price">₹280</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mushroom Tikka</span><span class="menu-item-price">₹240</span></div>
+            <div class="menu-item"><span class="menu-item-name">Veg Platter</span><span class="menu-item-price">Pls Ask</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Tikka</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Tandoori</span><span class="menu-item-price">₹220 / ₹420</span></div>
+            <div class="menu-item"><span class="menu-item-name">Seafood Platter</span><span class="menu-item-price">Pls Ask</span></div>
+          </div>
+        </div>
+
+        <!-- ── MAIN COURSE ── -->
+        <div class="menu-category" id="cat-maincourse">
+          <h3>Main Course — Veg</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Dal Fry</span><span class="menu-item-price">₹160</span></div>
+            <div class="menu-item"><span class="menu-item-name">Dal Tadka</span><span class="menu-item-price">₹180</span></div>
+            <div class="menu-item"><span class="menu-item-name">Palak Paneer</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Kadai Paneer</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Matar Paneer</span><span class="menu-item-price">₹240</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mushroom Masala</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Dal Kolhapuri</span><span class="menu-item-price">₹180</span></div>
+            <div class="menu-item"><span class="menu-item-name">Aloo Gobi</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Bindi Masala</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Veg Kolhapuri</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mushroom Xacuti</span><span class="menu-item-price">₹210</span></div>
+            <div class="menu-item"><span class="menu-item-name">Paneer Ambotik</span><span class="menu-item-price">₹250</span></div>
+            <div class="menu-item"><span class="menu-item-name">Paneer Xacuti</span><span class="menu-item-price">₹250</span></div>
+            <div class="menu-item"><span class="menu-item-name">Veg Handi</span><span class="menu-item-price">₹250</span></div>
+            <div class="menu-item"><span class="menu-item-name">Dal Palak</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Aloo Matar</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chana Masala</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Veg Makhanwala</span><span class="menu-item-price">₹220</span></div>
+          </div>
+
+          <h3>Main Course — Non-Veg</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Butter Chicken</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Kadai</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Kolhapuri</span><span class="menu-item-price">₹280</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Masala</span><span class="menu-item-price">₹280</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Tikka Masala</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Xacuti</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Cafreal</span><span class="menu-item-price">₹320</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Hydrabadi</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Handi</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Do Piaza</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Curry</span><span class="menu-item-price">₹280</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Vindaloo</span><span class="menu-item-price">₹300</span></div>
+            <div class="menu-item"><span class="menu-item-name">Prawns Masala</span><span class="menu-item-price">₹350</span></div>
+            <div class="menu-item"><span class="menu-item-name">Prawns Cafreal</span><span class="menu-item-price">₹350</span></div>
+            <div class="menu-item"><span class="menu-item-name">Prawns Xacuti</span><span class="menu-item-price">₹350</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mutton Xacuti</span><span class="menu-item-price">₹360</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mutton Roganjosh</span><span class="menu-item-price">₹360</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mutton Masala</span><span class="menu-item-price">₹360</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mutton Kolhapuri</span><span class="menu-item-price">₹360</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mutton Curry</span><span class="menu-item-price">₹360</span></div>
+          </div>
+        </div>
+
+        <!-- ── RICE & BREAD ── -->
+        <div class="menu-category" id="cat-rice">
+          <h3>Rice</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Steam Rice</span><span class="menu-item-price">₹60</span></div>
+            <div class="menu-item"><span class="menu-item-name">Jeera Rice</span><span class="menu-item-price">₹130</span></div>
+            <div class="menu-item"><span class="menu-item-name">Veg Pulav</span><span class="menu-item-price">₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Biryani Rice</span><span class="menu-item-price">₹200</span></div>
+          </div>
+
+          <h3>Biryani</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Veg Biryani</span><span class="menu-item-price">₹230</span></div>
+            <div class="menu-item"><span class="menu-item-name">Egg Biryani</span><span class="menu-item-price">₹240</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Biryani</span><span class="menu-item-price">₹290</span></div>
+            <div class="menu-item"><span class="menu-item-name">Prawns Biryani</span><span class="menu-item-price">₹320</span></div>
+            <div class="menu-item"><span class="menu-item-name">Muttun Biryani</span><span class="menu-item-price">₹380</span></div>
+            <div class="menu-item"><span class="menu-item-name">Seafood Biryani</span><span class="menu-item-price">₹380</span></div>
+          </div>
+
+          <h3>Bread</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Chapati</span><span class="menu-item-price">₹20</span></div>
+            <div class="menu-item"><span class="menu-item-name">Plain Roti</span><span class="menu-item-price">₹30</span></div>
+            <div class="menu-item"><span class="menu-item-name">Butter Roti</span><span class="menu-item-price">₹40</span></div>
+            <div class="menu-item"><span class="menu-item-name">Paratha</span><span class="menu-item-price">₹30</span></div>
+            <div class="menu-item"><span class="menu-item-name">Plain Naan</span><span class="menu-item-price">₹70</span></div>
+            <div class="menu-item"><span class="menu-item-name">Butter Naan</span><span class="menu-item-price">₹90</span></div>
+            <div class="menu-item"><span class="menu-item-name">Garlic Naan</span><span class="menu-item-price">₹100</span></div>
+            <div class="menu-item"><span class="menu-item-name">Cheese Naan</span><span class="menu-item-price">₹100</span></div>
+            <div class="menu-item"><span class="menu-item-name">Cheese Garlic Naan</span><span class="menu-item-price">₹130</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chilly Cheese Garlic Naan</span><span class="menu-item-price">₹150</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Naan</span><span class="menu-item-price">₹180</span></div>
+            <div class="menu-item"><span class="menu-item-name">Coriander Cheese Chilli Naan</span><span class="menu-item-price">₹180</span></div>
+          </div>
+        </div>
+
+        <!-- ── CHINESE ── -->
+        <div class="menu-category" id="cat-chinese">
+          <h3>Chinese Rice</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Fried Rice <small>Veg / Egg / Chicken / Prawn</small></span><span class="menu-item-price">₹170–250</span></div>
+            <div class="menu-item"><span class="menu-item-name">Schezwan Rice <small>Veg / Egg / Chicken / Prawn</small></span><span class="menu-item-price">₹190–280</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mixed Fried Rice</span><span class="menu-item-price">₹310</span></div>
+            <div class="menu-item"><span class="menu-item-name">Triple Chicken Schezwan Fried Rice</span><span class="menu-item-price">₹350</span></div>
+          </div>
+
+          <h3>Noodles</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Veg</span><span class="menu-item-price">₹170</span></div>
+            <div class="menu-item"><span class="menu-item-name">Egg</span><span class="menu-item-price">₹190</span></div>
+            <div class="menu-item"><span class="menu-item-name">Prawns</span><span class="menu-item-price">₹260</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken</span><span class="menu-item-price">₹220</span></div>
+            <div class="menu-item"><span class="menu-item-name">Mixed</span><span class="menu-item-price">₹280</span></div>
+          </div>
+
+          <h3>Soup</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Manchow Soup <small>Veg / Non-Veg</small></span><span class="menu-item-price">₹150 / ₹180</span></div>
+            <div class="menu-item"><span class="menu-item-name">Hot and Sour Soup <small>Veg / Non-Veg</small></span><span class="menu-item-price">₹150 / ₹180</span></div>
+            <div class="menu-item"><span class="menu-item-name">Lemon Coriander Soup <small>Veg / Non-Veg</small></span><span class="menu-item-price">₹180 / ₹200</span></div>
+            <div class="menu-item"><span class="menu-item-name">Seafood Soup</span><span class="menu-item-price">₹230</span></div>
+          </div>
+        </div>
+
+        <!-- ── PIZZA & PASTA ── -->
+        <div class="menu-category" id="cat-pizza">
+          <h3>Pizza</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Veg Pizza</span><span class="menu-item-price">₹280</span></div>
+            <div class="menu-item"><span class="menu-item-name">Chicken Pizza</span><span class="menu-item-price">₹350</span></div>
+            <div class="menu-item"><span class="menu-item-name">Seafood Pizza</span><span class="menu-item-price">₹400</span></div>
+          </div>
+
+          <h3>Italian Paneer Spaghetti &amp; Pasta</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Pasta Pandora</span><span class="menu-item-price">₹350</span></div>
+            <div class="menu-item"><span class="menu-item-name">Pasta Carbonara</span><span class="menu-item-price">₹350</span></div>
+            <div class="menu-item"><span class="menu-item-name">Momo Mia</span><span class="menu-item-price">₹350</span></div>
+            <div class="menu-item"><span class="menu-item-name">Spaghetti Alfredo</span><span class="menu-item-price">₹350</span></div>
+          </div>
+
+          <h3>Desserts</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Ice Cream <small>(seasonal)</small></span><span class="menu-item-price">Ask server</span></div>
+          </div>
+        </div>
+
+        <!-- ── BAR ── -->
+        <div class="menu-category" id="cat-drinks">
+          <h3>Bar</h3>
+          <div class="menu-items">
+            <div class="menu-item"><span class="menu-item-name">Ice Cold Beer</span><span class="menu-item-price">Pls Ask</span></div>
+            <div class="menu-item"><span class="menu-item-name">Feni (Goan Local Spirit)</span><span class="menu-item-price">Pls Ask</span></div>
+            <div class="menu-item"><span class="menu-item-name">Cocktails</span><span class="menu-item-price">Pls Ask</span></div>
+            <div class="menu-item"><span class="menu-item-name">Soft Drinks</span><span class="menu-item-price">Pls Ask</span></div>
+          </div>
+          <p class="menu-note">🍺 Enjoy your drinks by the free pool table. Full bar menu available at the restaurant.</p>
+        </div>
+
+        <div class="back-home">
+          <a href="index.html" class="btn-primary">← Back to Home</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/logo.webp" width="75" height="79" alt="Soul Curry logo" style="height: 80px; width: auto; border-radius: 50%; border: 2px solid var(--color-accent); margin-bottom: 1rem;">
+        <h2>Soul Curry</h2>
+        <p>Family Bar & Restaurant</p>
+      </div>
+      <div class="footer-info">
+        <h3>Visit Us</h3>
+        <p>Karashirmoll, Agonda<br>Canacona, Goa 403702</p>
+      </div>
+      <div class="footer_contact">
+         <h3>Contact</h3>
+         <p><a href="tel:+917498159749">+91 7498 159 749</a></p>
+         <div class="social-links">
+            <a href="https://www.instagram.com/soulcurry.goa" target="_blank">📷 Instagram</a>
+         </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Soul Curry Agonda. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function showMenu(event, cat) {
+      // Hide all categories
+      document.querySelectorAll('.menu-category').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.menu-tab').forEach(el => el.classList.remove('active'));
+      
+      // Show selected
+      document.getElementById('cat-' + cat).classList.add('active');
+      
+      // Highlight active tab
+      event.currentTarget.classList.add('active');
+      
+      // Scroll to tabs top if mobile
+      if (window.innerWidth < 768) {
+          const tabs = document.querySelector('.menu-tabs');
+          window.scrollTo({
+              top: tabs.offsetTop - 80,
+              behavior: 'smooth'
+          });
+      }
+    }
+  </script>
+  <script src="script.js" defer></script>
+</body>
+
+</html>
